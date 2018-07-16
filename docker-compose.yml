@@ -1,0 +1,17 @@
+version : "2.2"
+services: 
+  web:
+    image: nginx:latest
+    ports:
+      -  80:80
+  gatling-runner:
+    image: denvazh/gatling:latest
+    links:
+      - web
+    volumes:
+      - ./conf:/opt/gatling/conf
+      - ./user-files:/opt/gatling/user-files
+      - ./results:/opt/gatling/results
+    command:
+      " -m"
+
