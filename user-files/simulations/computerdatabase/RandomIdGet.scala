@@ -23,7 +23,7 @@ import io.gatling.http.Predef._
 import scala.concurrent.duration._
 import scala.util.Random
 
-class BasicSimulation extends Simulation {
+class RandomIdGet extends Simulation {
 
   val httpConf = http
     .baseURL("http://web") // Here is the root for all relative URLs
